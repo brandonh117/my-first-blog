@@ -6,15 +6,10 @@
         <div>
             <h1><a href="">Brand Blog</a></h1>
         </div>
-        <div>
-            <p>published: 05.05.2017, 12:14</p>
-            <h2><a href="">Mi Primer Post</a></h2>
-            <p>Este es el primer post de todos los posts</p>
-        </div>
-        <div>
-            <p>published: 05.05.2017, 12:17</p>
-            <h2><a href="">El Segundo Post</a></h2>
-            <p>Sacando el Segundo Post</p>
-        </div>
+        {% for post in posts %}
+        <p>Published: {{post.published_date}}</p>
+        <h1><a href="">{{post.title}}</a></h1>
+        <p>{{post.text|linebreaksbr}}</p>
+        {% endfor %}
     </body>
 </html>
